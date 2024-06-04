@@ -1,4 +1,4 @@
-module Trinagle where
+module Main where
 
 import Control.Monad (unless)
 import Control.Monad.Exception (MonadException)

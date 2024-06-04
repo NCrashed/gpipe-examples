@@ -27,3 +27,18 @@ executable gpipe-triangle
     default-extensions:
       ScopedTypeVariables
       TypeOperators
+
+executable gpipe-sampling
+    main-is:          Sampling.hs
+    build-depends:    
+          base ^>=4.19
+        , exception-transformers
+        , GPipe
+        , GPipe-GLFW
+        , lens 
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    default-extensions:
+      OverloadedRecordDot 
+      ScopedTypeVariables
+      TypeOperators

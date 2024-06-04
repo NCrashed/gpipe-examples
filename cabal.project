@@ -4,7 +4,7 @@ packages:
 source-repository-package
   type: git
   location: https://github.com/NCrashed/GPipe-Core.git
-  tag: ca1192efb0b9736b77853e91ced9999573a452f8
+  tag: fe7aa28ee320f5dbda65440a01cb0b1d1e6e9387
   subdir: GPipe-Core
 
 source-repository-package

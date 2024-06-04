@@ -28,6 +28,19 @@ executable gpipe-triangle
       ScopedTypeVariables
       TypeOperators
 
+executable gpipe-resize
+    main-is:          Resize.hs
+    build-depends:    
+          base ^>=4.19
+        , exception-transformers
+        , GPipe
+        , GPipe-GLFW
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    default-extensions:
+      ScopedTypeVariables
+      TypeOperators
+
 executable gpipe-uniform
     main-is:          Uniform.hs
     build-depends:    

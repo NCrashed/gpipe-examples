@@ -43,8 +43,8 @@ make3d (V2 x y) = projMat !*! viewMat !* V4 x y 0 1
 -- Copy of lookAt from linear with normalize replaced with signorm
 lookAt' :: Floating a => V3 a -> V3 a -> V3 a -> V4 (V4 a)
 lookAt' eye center up =
-  V4 (V4 (xa.x) (xa.y) (xa.z) xd)
-     (V4 (ya.x) (ya.y) (ya.z) yd)
+  V4 (V4 xa.x xa.y xa.z xd)
+     (V4 ya.x ya.y ya.z yd)
      (V4 (-za.x) (-za.y) (-za.z) zd)
      (V4 0     0     0     1)
   where za = signorm $ center - eye

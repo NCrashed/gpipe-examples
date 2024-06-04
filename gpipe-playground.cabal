@@ -28,6 +28,21 @@ executable gpipe-triangle
       ScopedTypeVariables
       TypeOperators
 
+executable gpipe-uniform
+    main-is:          Uniform.hs
+    build-depends:    
+          base ^>=4.19
+        , exception-transformers
+        , GPipe
+        , GPipe-GLFW
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    default-extensions:
+      FlexibleContexts 
+      OverloadedRecordDot 
+      ScopedTypeVariables
+      TypeOperators
+
 executable gpipe-sampling
     main-is:          Sampling.hs
     build-depends:    

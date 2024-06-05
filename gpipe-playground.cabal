@@ -83,3 +83,24 @@ executable gpipe-offscreen
       OverloadedRecordDot 
       ScopedTypeVariables
       TypeOperators
+
+executable gpipe-raycast
+    main-is:          Raycast.hs
+    build-depends:    
+          base ^>=4.19
+        , exception-transformers
+        , GPipe
+        , GPipe-GLFW
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    default-extensions:
+      DuplicateRecordFields
+      FlexibleContexts
+      FlexibleInstances
+      MultiParamTypeClasses
+      OverloadedRecordDot 
+      RecordWildCards
+      ScopedTypeVariables
+      TypeFamilies
+      TypeOperators
+      UndecidableInstances

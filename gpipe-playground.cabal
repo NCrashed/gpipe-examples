@@ -28,6 +28,21 @@ executable gpipe-triangle
       ScopedTypeVariables
       TypeOperators
 
+executable gpipe-cube
+    main-is:         Cube.hs 
+    build-depends:    
+          base ^>=4.19
+        , exception-transformers
+        , GPipe
+        , GPipe-GLFW
+    hs-source-dirs:   app
+    default-language: Haskell2010
+    default-extensions:
+      OverloadedRecordDot 
+      ScopedTypeVariables
+      TypeOperators
+
+
 executable gpipe-resize
     main-is:          Resize.hs
     build-depends:    

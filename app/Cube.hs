@@ -13,8 +13,6 @@ main :: IO ()
 main = runContextT GLFW.defaultHandleConfig $ do
   win <- newWindow (WindowFormatColor RGB8) (GLFW.defaultWindowConfig "Checkers")
   winSize <- maybe 0 (uncurry V2) <$> GLFW.getWindowSize win  
-  cursorPos <- maybe 0 (uncurry V2) <$> GLFW.getCursorPos win
-  let curPos = fmap round cursorPos
   vertexBuffer :: Buffer os (B2 Float) <- newBuffer 4
   writeBuffer vertexBuffer 0 [V2 0 0, V2 1 0, V2 0 1, V2 1 1]
   tex <- newTexture2D R8 (V2 15 15) 1
@@ -24,7 +22,7 @@ main = runContextT GLFW.defaultHandleConfig $ do
   shader <- compileShader $ do
     primitiveStream <- toPrimitiveStream primitives 
     let primitiveStream2 = fmap (\pos2d -> (make3d pos2d, pos2d)) primitiveStream
-    fragmentStream <- rasterize (const (FrontAndBack, ViewPort (V2 0 0) curPos, DepthRange 0 1)) primitiveStream2
+    fragmentStream <- rasterize (\s -> (FrontAndBack, ViewPort (V2 0 0) (curPost s), DepthRange 0 1)) primitiveStream2
     let filter = SamplerFilter Nearest Nearest Nearest Nothing
         edge = (pure Repeat, undefined)
     samp <- newSampler2D (const (tex, filter, edge))
